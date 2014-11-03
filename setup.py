@@ -19,7 +19,7 @@
 #
 # Authors: Daniel Izquierdo Cortazar <dizquierdo@gsyc.es>
 #          Francisco Rivas <frivas@libresoft.es>
-#          Luis CaÃ±as DÃ­az <lcanas@libresoft.es>
+#          Luis Cañas Díaz <lcanas@libresoft.es>
 #
 from distutils.core import setup
 
@@ -31,5 +31,5 @@ setup(name="Bicho",
       url="http://metricsgrimoire.github.com/Bicho/",
       packages=['bicho', 'bicho.backends', 'bicho.db',
                   'bicho.post_processing'],
-      data_files=[('share/man/man1/', ['doc/bicho.1'])],
+      data_files=[('share/man/man1', ['doc/bicho.1'])],
       scripts=["bin/bicho"])
