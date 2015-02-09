@@ -18,8 +18,8 @@
 #
 # Authors: Daniel Izquierdo Cortazar <dizquierdo@gsyc.es>
 #          Juan Francisco Gato Luis <jfcogato@libresoft.es>
-#          Luis CaÃ±as DÃ­az <lcanas@libresoft.es>
-#          Santiago DueÃ±as <sduenas@libresoft.es>
+#          Luis Cañas Díaz <lcanas@libresoft.es>
+#          Santiago Dueñas <sduenas@libresoft.es>
 #          Alvaro del Castillo <acs@bitergia.com>
 
 import string
@@ -1174,6 +1174,7 @@ class BGBackend(Backend):
             keep_trying = False
             try:
                 aux = urllib2.urlopen(url)
+                return aux
             except urllib2.HTTPError as e:
                 printerr("The server couldn\'t fulfill the request.")
                 printerr("Error code: %s" % e.code)
@@ -1184,7 +1185,7 @@ class BGBackend(Backend):
                          % HIBERNATION_LENGTH)
                 time.sleep(HIBERNATION_LENGTH)
                 keep_trying = True
-        return aux
+        return urllib2.urlopen("")
 
     def _is_auth_session(self):
         """
@@ -1203,7 +1204,7 @@ class BGBackend(Backend):
 
         if url.find("show_bug.cgi") > 0:
             pos = result.path.find('show_bug.cgi')
-        elif url.find("buglist.cgi") > 0:
+        else: #url.find("buglist.cgi") > 0:
             pos = result.path.find('buglist.cgi')
 
         newpath = result.path[0:pos]

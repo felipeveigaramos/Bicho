@@ -1,0 +1,1 @@
+python .\bicho -c ..\bichobg.conf --backend-user felipefvr@yahoo.com --backend-password Fvr1061461

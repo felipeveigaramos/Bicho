@@ -16,8 +16,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
-# Authors: Santiago Due√±as <sduenas@libresoft.es>
-#          Daniel Izquierdo Cort√°zar <dizquierdo@libresoft.es>
+# Authors: Santiago DueÒas <sduenas@libresoft.es>
+#          Daniel Izquierdo Cort·zar <dizquierdo@libresoft.es>
 #
 
 """
@@ -171,6 +171,9 @@ class DBDatabase:
 
             if issue.assigned_to is not None:
                 db_issue.assigned_to = self.insert_people(issue.assigned_to).id
+            else:
+                db_issue.assigned_to =1000000
+
 
             #if issue is new, we add to the data base before the flush()
             if newIssue == True:
